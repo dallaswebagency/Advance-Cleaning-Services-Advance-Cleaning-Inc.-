@@ -1,0 +1,529 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Advance Cleaning Services | Cleaning done right</title>
+<meta name="description" content="We put our customers and employees needs first. We are committed to ensuring customer satisfaction and we strive to be the last cleaning company you need.">
+<link rel="icon" type="image/png" href="images/favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,100..900&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#0a0b0d;
+  --ink-2:#15171b;
+  --steel:#003c68;
+  --steel-2:#0a6aa8;
+  --chrome:#c8cdd3;
+  --silver:#e4e7ea;
+  --paper:#f3f4f6;
+  --white:#fff;
+  --line:rgba(10,11,13,.14);
+  --font:"Archivo","Helvetica Neue",Arial,sans-serif;
+  --gut:clamp(20px,4.5vw,64px);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{font-family:var(--font);color:var(--ink);background:var(--paper);line-height:1.55;font-size:17px;overflow-x:hidden}
+img{max-width:100%;height:auto;display:block}
+a{color:inherit;text-decoration:none}
+button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
+:focus-visible{outline:3px solid var(--steel-2);outline-offset:3px}
+.skip{position:absolute;left:-999px;top:8px;background:var(--ink);color:#fff;padding:10px 16px;z-index:200}
+.skip:focus{left:8px}
+.wrap{width:100%;max-width:1360px;margin:0 auto;padding-inline:var(--gut)}
+.disp{font-weight:800;font-stretch:112%;letter-spacing:-.025em;line-height:.92;text-transform:none}
+
+/* buttons */
+.btn{display:inline-flex;align-items:center;gap:12px;padding:16px 28px;font-weight:700;font-stretch:108%;letter-spacing:.02em;font-size:15px;text-transform:uppercase;border-radius:2px;transition:transform .25s,background .25s,color .25s,box-shadow .25s;position:relative}
+.btn svg{width:18px;height:18px;transition:transform .25s}
+.btn:hover svg{transform:translateX(4px)}
+.btn-ink{background:var(--ink);color:#fff;box-shadow:6px 6px 0 var(--chrome)}
+.btn-ink:hover{background:var(--steel);box-shadow:3px 3px 0 var(--chrome);transform:translate(3px,3px)}
+.btn-line{border:2px solid var(--ink);color:var(--ink)}
+.btn-line:hover{background:var(--ink);color:#fff}
+.btn-white{background:#fff;color:var(--ink);box-shadow:6px 6px 0 var(--steel-2)}
+.btn-white:hover{transform:translate(3px,3px);box-shadow:3px 3px 0 var(--steel-2)}
+
+/* utility bar */
+.util{background:var(--ink);color:#cfd3d8;font-size:13.5px}
+.util .wrap{display:flex;justify-content:space-between;align-items:center;gap:16px;min-height:42px;flex-wrap:wrap;padding-block:6px}
+.util a:hover{color:#fff}
+.util-l{display:flex;gap:26px;flex-wrap:wrap}
+.util-l a{display:inline-flex;gap:8px;align-items:center}
+.util-l svg{width:15px;height:15px;opacity:.8}
+.soc{display:flex;gap:6px}
+.soc a{width:32px;height:32px;display:grid;place-items:center;border:1px solid rgba(255,255,255,.22);border-radius:50%;transition:background .2s}
+.soc a:hover{background:var(--steel-2);border-color:var(--steel-2)}
+.soc svg{width:15px;height:15px;fill:currentColor}
+
+/* header */
+header.top{position:sticky;top:0;z-index:100;background:rgba(228,231,234,.92);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+header.top .wrap{display:flex;align-items:center;justify-content:space-between;gap:24px;min-height:84px}
+.brand img{height:58px;width:auto}
+nav.main{display:flex;align-items:center;gap:6px}
+nav.main>ul{display:flex;list-style:none;gap:4px;align-items:center}
+nav.main a.l,nav.main button.l{display:block;padding:12px 16px;font-weight:600;font-stretch:104%;font-size:15px;letter-spacing:.01em;position:relative}
+nav.main a.l::after,nav.main button.l::after{content:"";position:absolute;left:16px;right:16px;bottom:6px;height:2px;background:var(--steel);transform:scaleX(0);transform-origin:left;transition:transform .3s}
+nav.main li:hover>.l::after,nav.main .l:focus-visible::after{transform:scaleX(1)}
+nav.main li{position:relative}
+.drop{position:absolute;top:100%;left:0;min-width:300px;background:var(--ink);color:#fff;padding:10px;opacity:0;visibility:hidden;transform:translateY(8px);transition:.25s;box-shadow:0 24px 50px rgba(0,0,0,.28)}
+li.has:hover .drop,li.has:focus-within .drop{opacity:1;visibility:visible;transform:none}
+.drop a{display:flex;align-items:center;gap:14px;padding:12px 14px;font-size:15px;font-weight:500}
+.drop a:hover{background:var(--steel)}
+.drop img{width:30px;height:30px}
+.top .btn{padding:13px 22px;font-size:13.5px;box-shadow:4px 4px 0 var(--chrome);margin-left:10px}
+.burger{display:none;width:48px;height:48px;border:2px solid var(--ink);align-items:center;justify-content:center}
+.burger span,.burger span::before,.burger span::after{display:block;width:22px;height:2px;background:var(--ink);position:relative;transition:.25s}
+.burger span::before,.burger span::after{content:"";position:absolute;left:0}
+.burger span::before{top:-7px}.burger span::after{top:7px}
+.burger[aria-expanded=true] span{background:transparent}
+.burger[aria-expanded=true] span::before{top:0;transform:rotate(45deg)}
+.burger[aria-expanded=true] span::after{top:0;transform:rotate(-45deg)}
+
+/* hero */
+.hero{position:relative;background:
+  radial-gradient(1200px 700px at 78% 40%,#f6f7f8 0,transparent 60%),
+  linear-gradient(115deg,var(--silver) 0,#d6dadf 55%,#cdd2d8 100%);
+  overflow:hidden;isolation:isolate}
+.hero::before{content:"";position:absolute;inset:0;z-index:-1;opacity:.5;background:repeating-linear-gradient(100deg,rgba(255,255,255,.35) 0 2px,transparent 2px 9px);mask-image:linear-gradient(90deg,transparent,#000 40%,transparent)}
+.hero .wrap{display:grid;grid-template-columns:minmax(0,1.12fr) minmax(0,.88fr);align-items:center;gap:30px;min-height:clamp(640px,86vh,820px);padding-block:56px 80px}
+.kicker{display:inline-flex;align-items:center;gap:14px;font-weight:700;font-stretch:110%;font-size:13px;letter-spacing:.16em;text-transform:uppercase;color:var(--steel)}
+.kicker::before{content:"";width:44px;height:3px;background:var(--steel)}
+h1{font-size:clamp(3.4rem,8.6vw,9rem);margin:26px 0 54px}
+h1 .l2{display:block;margin-left:clamp(0px,3vw,48px)}
+h1 em{font-style:normal;color:transparent;-webkit-text-stroke:2.5px var(--ink);position:relative;white-space:nowrap}
+h1 em::after{content:"";position:absolute;left:2%;right:-3%;bottom:-.06em;height:.1em;background:var(--steel);transform:skewX(-24deg);border-radius:2px}
+.lede{max-width:540px;font-size:clamp(1.05rem,1.4vw,1.2rem);color:#2b2f35}
+.cta{display:flex;gap:22px 26px;flex-wrap:wrap;margin-top:38px;align-items:center}
+.stage{position:relative;display:grid;place-items:center;min-height:520px}
+.stage .ring{position:absolute;border-radius:50%;border:0;pointer-events:none}
+.ring.a{width:min(46vw,640px);aspect-ratio:1.5;border-top:14px solid var(--ink);transform:rotate(-14deg) translate(-4%,-20%);clip-path:inset(0 0 55% 0)}
+.ring.b{width:min(44vw,610px);aspect-ratio:1.5;border-bottom:8px solid var(--ink);transform:rotate(-14deg) translate(6%,30%);clip-path:inset(55% 0 0 0)}
+.stage img{width:min(36vw,500px);filter:drop-shadow(0 40px 40px rgba(10,11,13,.28));position:relative;animation:float 9s ease-in-out infinite}
+@keyframes float{50%{transform:translateY(-14px)}}
+.scrollcue{position:absolute;left:var(--gut);bottom:28px;display:flex;align-items:center;gap:12px;font-size:13px;font-weight:600;letter-spacing:.08em;text-transform:uppercase}
+.scrollcue i{width:1px;height:46px;background:var(--ink);display:block;transform-origin:top;animation:drip 2.2s infinite}
+@keyframes drip{0%{transform:scaleY(0)}60%{transform:scaleY(1)}100%{transform:scaleY(1);opacity:0}}
+
+/* ribbon */
+.ribbon{background:var(--ink);color:#fff}
+.ribbon .wrap{display:flex;align-items:center;gap:20px 56px;padding-block:34px;flex-wrap:wrap}
+.ribbon .exp{font-size:13px;letter-spacing:.18em;text-transform:uppercase;color:var(--chrome);font-weight:600}
+.ribbon ul{list-style:none;display:flex;gap:14px 40px;flex-wrap:wrap;align-items:center}
+.ribbon li{font-size:clamp(1.7rem,3.5vw,3.2rem);font-weight:800;font-stretch:115%;letter-spacing:-.02em;line-height:1;display:flex;align-items:center;gap:40px;white-space:nowrap}
+.ribbon li:not(:last-child)::after{content:"";width:12px;height:12px;background:var(--steel-2);transform:rotate(45deg);flex:none}
+.ribbon li:nth-child(2){color:transparent;-webkit-text-stroke:1.5px #fff}
+
+/* services */
+.services{padding:clamp(70px,9vw,130px) 0 0;background:var(--paper)}
+.sec-head{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,.8fr);gap:30px 70px;align-items:end;margin-bottom:48px}
+.sec-head h2{font-size:clamp(2.8rem,6.4vw,6rem)}
+.sec-head p{font-size:1.1rem;color:#363a41;max-width:480px;justify-self:end}
+.sec-head .tag{display:block;margin-bottom:18px}
+.doors{display:flex;height:clamp(560px,78vh,680px);border-top:1px solid var(--ink)}
+.door{position:relative;flex:1 1 0;min-width:0;overflow:hidden;color:#fff;background:linear-gradient(160deg,var(--c1),var(--c2));border-right:1px solid rgba(255,255,255,.16);transition:flex-grow .8s cubic-bezier(.2,.75,.15,1)}
+.door:last-child{border-right:0}
+.door.on{flex-grow:5.2}
+.door::before{content:"";position:absolute;right:7%;top:46%;width:min(44%,320px);aspect-ratio:1;transform:translateY(-50%);background:var(--ghost) center/contain no-repeat;opacity:0;filter:grayscale(1) brightness(1.6);transition:opacity .8s .2s}
+.door.on::before{opacity:.16}
+.door .bg{position:absolute;inset:0;background:var(--img) center/cover no-repeat;transform:scale(1.05);transition:transform 1.4s,filter .6s;filter:saturate(.85)}
+.door.on .bg{transform:scale(1);filter:none}
+.door .bg::after{content:"";position:absolute;inset:0;background:
+  repeating-linear-gradient(135deg,rgba(255,255,255,.045) 0 1px,transparent 1px 22px),
+  linear-gradient(180deg,rgba(0,0,0,.35),rgba(0,0,0,.12) 35%,rgba(0,0,0,.82))}
+.door .hit{position:absolute;inset:0;z-index:3;width:100%;height:100%}
+.door .num{position:absolute;top:26px;right:26px;z-index:2;font-weight:800;font-stretch:120%;font-size:15px;letter-spacing:.1em;color:var(--chrome)}
+.door .ico{max-width:none;position:absolute;top:22px;left:22px;z-index:2;width:64px;height:64px;transition:width .6s,height .6s,top .6s,left .6s;filter:drop-shadow(0 8px 14px rgba(0,0,0,.5))}
+.door.on .ico{width:112px;height:112px;top:30px;left:32px}
+.door .tab{position:absolute;left:50%;bottom:30px;z-index:2;writing-mode:vertical-rl;transform:translateX(-50%) rotate(180deg);font-weight:700;font-stretch:112%;font-size:clamp(1.05rem,1.5vw,1.4rem);letter-spacing:.02em;white-space:nowrap;transition:opacity .35s}
+.door.on .tab{opacity:0}
+.door .body{position:absolute;left:0;bottom:0;z-index:4;width:min(560px,100%);padding:0 36px 38px 36px;opacity:0;transform:translateY(24px);transition:opacity .4s,transform .6s;pointer-events:none}
+.door.on .body{opacity:1;transform:none;transition-delay:.3s;pointer-events:auto}
+.door h3{font-size:clamp(2rem,3.4vw,3.2rem);font-weight:800;font-stretch:112%;letter-spacing:-.02em;line-height:1;margin-bottom:16px}
+.door .sub{font-size:1.1rem;color:#e6e9ec;margin-bottom:26px;max-width:420px}
+.door .go{display:inline-flex;gap:12px;align-items:center;font-weight:700;font-stretch:108%;text-transform:uppercase;font-size:14px;letter-spacing:.06em;border-bottom:2px solid var(--steel-2);padding-bottom:6px}
+.door .go svg{width:18px;height:18px}
+.door .go:hover{color:var(--steel-2)}
+.door .hit:focus-visible{outline-offset:-6px;outline-color:#fff}
+.door:nth-child(1){--c1:#1b2733;--c2:#05080b}
+.door:nth-child(2){--c1:#003c68;--c2:#06121c}
+.door:nth-child(3){--c1:#2b2f36;--c2:#08090b}
+.door:nth-child(4){--c1:#0a4a7c;--c2:#0b1118}
+.door:nth-child(5){--c1:#3a4048;--c2:#0a0c0f}
+
+/* condo band */
+.condo{position:relative;background:var(--ink);overflow:hidden}
+.condo img{width:100%;height:clamp(340px,34vw,480px);object-fit:cover;object-position:50% 62%}
+.condo::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(5,8,11,.82) 0,rgba(5,8,11,.1) 55%)}
+.condo .card{position:absolute;z-index:2;left:var(--gut);bottom:0;background:var(--paper);padding:30px 36px 34px;max-width:480px}
+.condo .card .k{font-size:12px;letter-spacing:.2em;text-transform:uppercase;font-weight:700;color:var(--steel)}
+.condo .card h3{font-size:clamp(1.8rem,3vw,2.6rem);margin:10px 0 10px;font-weight:800;font-stretch:112%;letter-spacing:-.02em;line-height:1}
+.condo .card p{color:#363a41;margin-bottom:18px}
+.condo .card a{font-weight:700;text-transform:uppercase;font-size:14px;letter-spacing:.06em;border-bottom:2px solid var(--steel);padding-bottom:4px}
+
+/* quality */
+.quality{padding:clamp(80px,10vw,150px) 0;background:var(--paper);position:relative;overflow:hidden;isolation:isolate}
+.quality .wrap{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:60px 90px;align-items:start}
+.q-big{position:relative}
+.q-big h2{font-size:clamp(3.4rem,9vw,8.6rem)}
+.q-big h2 span{display:block}
+.q-big h2 .o{color:transparent;-webkit-text-stroke:2.5px var(--ink)}
+.q-big img{position:absolute;right:-6%;top:6%;width:52%;opacity:.16;pointer-events:none;z-index:-1}
+.q-txt{padding-top:12px}
+.q-txt p{font-size:1.12rem;color:#2b2f35;margin-bottom:22px;max-width:560px}
+.q-txt .pull{font-size:clamp(1.6rem,2.6vw,2.3rem);font-weight:700;font-stretch:108%;letter-spacing:-.015em;line-height:1.12;color:var(--ink);padding-left:26px;border-left:6px solid var(--steel);margin:34px 0}
+.q-txt .pull b{color:var(--steel)}
+
+/* book */
+.book{background:var(--ink);color:#fff;position:relative;overflow:hidden;isolation:isolate}
+.book::before{content:"";position:absolute;right:-12%;top:-40%;width:70vw;aspect-ratio:1;border-radius:50%;background:radial-gradient(circle,var(--steel) 0,rgba(0,60,104,0) 66%);z-index:-1;opacity:.9}
+.book::after{content:"";position:absolute;left:-6%;bottom:-70%;width:90vw;aspect-ratio:1.8;border-top:2px solid rgba(255,255,255,.2);border-radius:50%;transform:rotate(-8deg);z-index:-1}
+.book .wrap{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,.95fr);gap:50px 80px;padding-block:clamp(80px,9vw,130px);align-items:center}
+.book h2{font-size:clamp(2.4rem,5.4vw,5rem)}
+.book h2 em{font-style:normal;color:var(--steel-2)}
+.book .btns{margin-top:40px}
+.contact{display:grid;gap:0;border-top:1px solid rgba(255,255,255,.25)}
+.contact a{display:block;padding:24px 0;border-bottom:1px solid rgba(255,255,255,.25);transition:padding .3s}
+.contact a:hover{padding-left:14px}
+.contact strong.em{font-size:clamp(1rem,1.55vw,1.35rem);letter-spacing:0;word-break:normal;overflow-wrap:anywhere}
+.contact small{display:block;font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:var(--chrome);margin-bottom:6px;font-weight:600}
+.contact strong{font-size:clamp(1.3rem,2.2vw,2rem);font-weight:800;font-stretch:110%;letter-spacing:-.01em;word-break:break-word}
+
+/* footer */
+footer{background:#050607;color:#b9bec5;font-size:15px}
+.f-top{display:grid;grid-template-columns:1.4fr 1fr 1.2fr 1.2fr;gap:44px;padding-block:72px 56px}
+.f-top img.logo{width:min(300px,100%);margin-bottom:22px}
+.f-top p{max-width:300px}
+.f-top h4{font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:#fff;margin-bottom:20px;font-weight:700}
+.f-top ul{list-style:none;display:grid;gap:11px}
+.f-top a:hover{color:#fff}
+.f-top .soc{margin-top:20px}
+.f-bot{border-top:1px solid rgba(255,255,255,.12)}
+.f-bot .wrap{display:flex;justify-content:space-between;gap:12px 30px;flex-wrap:wrap;padding-block:24px;font-size:14px}
+.f-bot a{color:#fff;border-bottom:1px solid var(--steel-2)}
+.f-bot a:hover{color:var(--steel-2)}
+
+/* reveal */
+.js .rv{opacity:0;transform:translateY(28px);transition:opacity .8s,transform .8s cubic-bezier(.2,.7,.2,1)}
+.js .rv.in{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){
+  *{animation:none!important;transition-duration:.01ms!important;scroll-behavior:auto!important}
+  .js .rv{opacity:1;transform:none}
+}
+
+/* responsive */
+@media (max-width:1100px){
+  .hero .wrap{grid-template-columns:1fr;min-height:0;padding-block:44px 90px}
+  .stage{min-height:420px;margin-top:10px}
+  .stage img{width:min(62vw,380px)}
+  .ring.a{width:min(88vw,560px)}.ring.b{width:min(84vw,540px)}
+  .scrollcue{display:none}
+  .f-top{grid-template-columns:1fr 1fr}
+  .quality .wrap,.book .wrap,.sec-head{grid-template-columns:1fr}
+  .sec-head p{justify-self:start}
+}
+@media (max-width:900px){
+  .burger{display:inline-flex}
+  nav.main{position:absolute;left:0;right:0;top:100%;background:var(--ink);color:#fff;flex-direction:column;align-items:stretch;padding:10px var(--gut) 26px;display:none;max-height:calc(100vh - 130px);overflow:auto}
+  nav.main.open{display:flex}
+  nav.main>ul{flex-direction:column;align-items:stretch;gap:0}
+  nav.main a.l,nav.main button.l{padding:16px 0;border-bottom:1px solid rgba(255,255,255,.14);font-size:17px;width:100%;text-align:left}
+  nav.main a.l::after,nav.main button.l::after{display:none}
+  .drop{position:static;opacity:1;visibility:visible;transform:none;box-shadow:none;background:transparent;padding:0 0 6px 14px;min-width:0}
+  .top .btn{margin:18px 0 0;box-shadow:none;background:#fff;color:var(--ink);justify-content:center}
+  .doors{flex-direction:column;height:auto}
+  .door{flex:none;min-height:92px;border-right:0;border-bottom:1px solid rgba(255,255,255,.16);transition:min-height .6s cubic-bezier(.2,.75,.15,1)}
+  .door.on{min-height:440px}
+  .door .tab{writing-mode:horizontal-tb;transform:none;left:104px;top:50%;bottom:auto;translate:0 -50%;font-size:1.25rem}
+  .door .ico{top:14px;left:18px}
+  .door.on .ico{width:92px;height:92px;top:22px;left:22px}
+  .door .num{top:34px}
+  .door.on .num{top:26px}
+  .door .body{padding:0 24px 28px}
+  .ribbon li{gap:22px}.ribbon ul{gap:12px 22px}
+  .condo .card{position:relative;max-width:none;left:0;margin-top:-1px;padding:26px var(--gut) 32px}
+  .condo::after{display:none}
+}
+@media (max-width:900px){.door::before{width:150px;right:4%;top:36%}}
+@media (max-width:640px){
+  body{font-size:16px}
+  .util-l{gap:6px 18px}
+  .util .wrap{justify-content:center}
+  .brand img{height:46px}
+  header.top .wrap{min-height:72px}
+  h1{-webkit-text-stroke:0}
+  h1 em{-webkit-text-stroke-width:2px}
+  .cta .btn{width:100%;justify-content:center}
+  .f-top{grid-template-columns:1fr;padding-block:56px 36px}
+  .f-bot .wrap{flex-direction:column}
+  .q-big img{display:none}
+  .ribbon li{font-size:1.9rem}
+}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<div class="util">
+  <div class="wrap">
+    <div class="util-l">
+      <a href="tel:8665334378"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z"/></svg>866.533.4378</a>
+      <a href="mailto:cleaning.info@advancecleaningservices.ca"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 6L2 7"/></svg>cleaning.info@advancecleaningservices.ca</a>
+    </div>
+    <div class="soc">
+      <a href="https://www.facebook.com/advancecleaningservicesinc" aria-label="Facebook" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M13.5 22v-8.2h2.8l.5-3.3h-3.3V8.4c0-.9.4-1.7 1.8-1.7h1.6V3.8A20 20 0 0 0 14.6 3.7c-2.6 0-4.3 1.600-4.3 4.500v2.300H7.500v3.300h2.800V22z"/></svg></a>
+      <a href="https://www.instagram.com/advancecleaningservices/" aria-label="Instagram" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7.800 2h8.400A5.800 5.800 0 0 1 22 7.800v8.400a5.800 5.800 0 0 1-5.800 5.800H7.800A5.800 5.800 0 0 1 2 16.200V7.800A5.800 5.800 0 0 1 7.800 2zm-.2 2A3.600 3.600 0 0 0 4 7.600v8.800A3.600 3.600 0 0 0 7.600 20h8.800a3.600 3.600 0 0 0 3.600-3.600V7.600A3.600 3.600 0 0 0 16.400 4zm9.600 1.500a1.300 1.300 0 1 1 0 2.600 1.300 1.300 0 0 1 0-2.600zM12 7a5 5 0 1 1 0 10 5 5 0 0 1 0-10zm0 2a3 3 0 1 0 0 6 3 3 0 0 0 0-6z"/></svg></a>
+    </div>
+  </div>
+</div>
+
+<header class="top">
+  <div class="wrap">
+    <a class="brand" href="/" aria-label="Advance Cleaning Services, home"><img src="images/logo.png" alt="Advance Cleaning Services" width="1400" height="366"></a>
+    <button class="burger" aria-label="Menu" aria-expanded="false" aria-controls="nav"><span></span></button>
+    <nav class="main" id="nav" aria-label="Main">
+      <ul>
+        <li><a class="l" href="https://www.advancecleaningservices.ca/about-us/">About Us</a></li>
+        <li class="has"><a class="l" href="https://www.advancecleaningservices.ca/services/">Services</a>
+          <div class="drop">
+            <a href="https://www.advancecleaningservices.ca/commercial-cleaning/"><img src="images/icon-commercial.png" alt="">Commercial Cleaning</a>
+            <a href="https://www.advancecleaningservices.ca/residential-cleaning/"><img src="images/icon-residential.png" alt="">Residential Cleaning</a>
+            <a href="https://www.advancecleaningservices.ca/carpet-cleaning/"><img src="images/icon-carpet.png" alt="">Carpet and Tile Cleaning</a>
+            <a href="https://www.advancecleaningservices.ca/condominium-services/"><img src="images/icon-condo.png" alt="">Condominium Services</a>
+            <a href="https://www.advancecleaningservices.ca/medical-facilities/"><img src="images/icon-medical.png" alt="">Medical Facilities</a>
+          </div>
+        </li>
+        <li><a class="l" href="https://www.advancecleaningservices.ca/career/">Career</a></li>
+        <li><a class="l" href="https://www.advancecleaningservices.ca/contact-us-today/">Contact Us</a></li>
+      </ul>
+      <a class="btn btn-ink" href="https://www.advancecleaningservices.ca/booknow/">Book Now</a>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+
+<section class="hero">
+  <div class="wrap">
+    <div class="copy">
+      <p class="kicker rv">Great service and quality assurance</p>
+      <h1 class="disp rv"><span>Cleaning</span><span class="l2">done <em>right.</em></span></h1>
+      <p class="lede rv">We put our customers and employees needs first. We are committed to ensuring customer satisfaction and we strive to be the last cleaning company you need.</p>
+      <div class="cta rv">
+        <a class="btn btn-ink" href="https://www.advancecleaningservices.ca/booknow/">Book Now <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        <a class="btn btn-line" href="tel:8665334378">866.533.4378</a>
+      </div>
+    </div>
+    <div class="stage" aria-hidden="true">
+      <span class="ring a"></span><span class="ring b"></span>
+      <img src="images/crest.png" alt="" width="1017" height="900">
+    </div>
+  </div>
+  <a class="scrollcue" href="#services"><i></i>Our services</a>
+</section>
+
+<section class="ribbon" aria-label="What to expect">
+  <div class="wrap">
+    <p class="exp">Expect</p>
+    <ul>
+      <li>Professional</li>
+      <li>Courteous</li>
+      <li>Knowledgeable</li>
+    </ul>
+  </div>
+</section>
+
+<section class="services" id="services">
+  <div class="wrap">
+    <div class="sec-head">
+      <div>
+        <span class="kicker tag rv">Our services</span>
+        <h2 class="disp rv">Five ways<br>we clean.</h2>
+      </div>
+      <p class="rv">Click on a service for more information. Or if you would like to book in a cleaning service or get an in person quote for your business, hit the Book Now button and follow the prompts.</p>
+    </div>
+  </div>
+
+  <div class="doors" id="doors">
+    <article class="door on" style="--img:url(images/service-commercial.jpg);--ghost:url(images/icon-commercial.png)">
+      <div class="bg"></div>
+      <img class="ico" src="images/icon-commercial.png" alt="" width="112" height="112">
+      <span class="num">01</span>
+      <span class="tab">Commercial &amp; Office</span>
+      <button class="hit" aria-expanded="true" aria-label="Commercial and Office Cleaning"></button>
+      <div class="body">
+        <h3>Commercial &amp; Office Cleaning</h3>
+        <p class="sub">Janitorial and Day Porter Services</p>
+        <a class="go" href="https://www.advancecleaningservices.ca/commercial-cleaning/">More information <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+      </div>
+    </article>
+    <article class="door" style="--img:url(images/service-residential.jpg);--ghost:url(images/icon-residential.png)">
+      <div class="bg"></div>
+      <img class="ico" src="images/icon-residential.png" alt="" width="112" height="112">
+      <span class="num">02</span>
+      <span class="tab">Residential</span>
+      <button class="hit" aria-expanded="false" aria-label="Residential Cleaning"></button>
+      <div class="body">
+        <h3>Residential Cleaning</h3>
+        <p class="sub">Maid Service, Move in/out, Post Construction Cleaning</p>
+        <a class="go" href="https://www.advancecleaningservices.ca/residential-cleaning/">More information <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+      </div>
+    </article>
+    <article class="door" style="--img:url(images/service-carpet.jpg);--ghost:url(images/icon-carpet.png)">
+      <div class="bg"></div>
+      <img class="ico" src="images/icon-carpet.png" alt="" width="112" height="112">
+      <span class="num">03</span>
+      <span class="tab">Carpet &amp; Tile</span>
+      <button class="hit" aria-expanded="false" aria-label="Carpet and Tile Cleaning"></button>
+      <div class="body">
+        <h3>Carpet and Tile Cleaning</h3>
+        <p class="sub">Commercial and Residential Services</p>
+        <a class="go" href="https://www.advancecleaningservices.ca/carpet-cleaning/">More information <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+      </div>
+    </article>
+    <article class="door" style="--img:url(images/service-condo.jpg);--ghost:url(images/icon-condo.png)">
+      <div class="bg"></div>
+      <img class="ico" src="images/icon-condo.png" alt="" width="112" height="112">
+      <span class="num">04</span>
+      <span class="tab">Condominium</span>
+      <button class="hit" aria-expanded="false" aria-label="Condominium Services"></button>
+      <div class="body">
+        <h3>Condominium Services</h3>
+        <p class="sub">Building Cleaning, Lawn Care, Light Snow Removal</p>
+        <a class="go" href="https://www.advancecleaningservices.ca/condominium-services/">More information <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+      </div>
+    </article>
+    <article class="door" style="--img:url(images/service-medical.jpg);--ghost:url(images/icon-medical.png)">
+      <div class="bg"></div>
+      <img class="ico" src="images/icon-medical.png" alt="" width="112" height="112">
+      <span class="num">05</span>
+      <span class="tab">Medical Facilities</span>
+      <button class="hit" aria-expanded="false" aria-label="Medical Facilities"></button>
+      <div class="body">
+        <h3>Medical Facilities</h3>
+        <p class="sub">Dental, Doctor, Veterinarian</p>
+        <a class="go" href="https://www.advancecleaningservices.ca/medical-facilities/">More information <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+      </div>
+    </article>
+  </div>
+</section>
+
+<section class="condo" aria-label="Condominium Services">
+  <img src="images/condo.jpg" alt="Condominium building with ground floor shops" width="1400" height="390" loading="lazy">
+  <div class="card rv">
+    <span class="k">Condominium Services</span>
+    <h3>Building Cleaning, Lawn Care, Light Snow Removal</h3>
+    <p>Hit the Book Now button to book in a cleaning service or get an in person quote.</p>
+    <a href="https://www.advancecleaningservices.ca/condominium-services/">See condominium services</a>
+  </div>
+</section>
+
+<section class="quality">
+  <div class="wrap">
+    <div class="q-big">
+      <h2 class="disp rv"><span>Quality</span><span class="o">is king.</span></h2>
+      <img src="images/crest.png" alt="" aria-hidden="true">
+    </div>
+    <div class="q-txt rv">
+      <p>When we are at a client's home or office we understand that quality is king. We provide quality work. Expect professional, courteous, knowledgeable service.</p>
+      <p class="pull">Advance Cleaning provides <b>affordable maid service.</b></p>
+      <p>From just cleaning the kitchen and bathrooms to cleaning the whole house top to bottom, we can do it all.</p>
+    </div>
+  </div>
+</section>
+
+<section class="book" id="book">
+  <div class="wrap">
+    <div>
+      <h2 class="disp rv">Book in a cleaning service or get an in person <em>quote</em> for your business.</h2>
+      <div class="btns rv"><a class="btn btn-white" href="https://www.advancecleaningservices.ca/booknow/">Book Now <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div>
+    </div>
+    <div class="contact rv">
+      <a href="tel:8665334378"><small>Call</small><strong>866.533.4378</strong></a>
+      <a href="mailto:cleaning.info@advancecleaningservices.ca"><small>Email</small><strong class="em">cleaning.info@advancecleaningservices.ca</strong></a>
+      <a href="https://www.advancecleaningservices.ca/contact-us-today/"><small>Contact Us</small><strong>Get in touch</strong></a>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="f-top">
+      <div>
+        <img class="logo" src="images/logo-white.png" alt="Advance Cleaning Services" width="1400" height="366">
+        <p>Cleaning done right. Great service and quality assurance.</p>
+        <div class="soc">
+          <a href="https://www.facebook.com/advancecleaningservicesinc" aria-label="Facebook" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M13.5 22v-8.2h2.8l.5-3.3h-3.3V8.4c0-.9.4-1.7 1.8-1.7h1.6V3.8A20 20 0 0 0 14.6 3.7c-2.6 0-4.3 1.600-4.3 4.500v2.300H7.500v3.300h2.800V22z"/></svg></a>
+          <a href="https://www.instagram.com/advancecleaningservices/" aria-label="Instagram" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7.800 2h8.400A5.800 5.800 0 0 1 22 7.800v8.400a5.800 5.800 0 0 1-5.800 5.800H7.800A5.800 5.800 0 0 1 2 16.200V7.800A5.800 5.800 0 0 1 7.800 2zm-.2 2A3.600 3.600 0 0 0 4 7.600v8.800A3.600 3.600 0 0 0 7.600 20h8.800a3.600 3.600 0 0 0 3.600-3.600V7.600A3.600 3.600 0 0 0 16.400 4zm9.600 1.500a1.300 1.300 0 1 1 0 2.600 1.300 1.300 0 0 1 0-2.600zM12 7a5 5 0 1 1 0 10 5 5 0 0 1 0-10zm0 2a3 3 0 1 0 0 6 3 3 0 0 0 0-6z"/></svg></a>
+        </div>
+      </div>
+      <div>
+        <h4>Company</h4>
+        <ul>
+          <li><a href="/">Home</a></li>
+          <li><a href="https://www.advancecleaningservices.ca/about-us/">About Us</a></li>
+          <li><a href="https://www.advancecleaningservices.ca/career/">Career</a></li>
+          <li><a href="https://www.advancecleaningservices.ca/contact-us-today/">Contact Us</a></li>
+          <li><a href="https://www.advancecleaningservices.ca/booknow/">Book Now</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Services</h4>
+        <ul>
+          <li><a href="https://www.advancecleaningservices.ca/commercial-cleaning/">Commercial Cleaning</a></li>
+          <li><a href="https://www.advancecleaningservices.ca/residential-cleaning/">Residential Cleaning</a></li>
+          <li><a href="https://www.advancecleaningservices.ca/carpet-cleaning/">Carpet and Tile Cleaning</a></li>
+          <li><a href="https://www.advancecleaningservices.ca/condominium-services/">Condominium Services</a></li>
+          <li><a href="https://www.advancecleaningservices.ca/medical-facilities/">Medical Facilities</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Contact</h4>
+        <ul>
+          <li><a href="tel:8665334378">866.533.4378</a></li>
+          <li><a href="mailto:cleaning.info@advancecleaningservices.ca">cleaning.info@advancecleaningservices.ca</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="f-bot">
+    <div class="wrap">
+      <span>&copy; 2026 Advance Cleaning Services. All Rights Reserved.</span>
+      <span>Design by <a href="https://cleanningdigital.com/" target="_blank" rel="noopener">Cleaning Digital</a>.</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  document.documentElement.classList.add('js');
+  // doors
+  var doors=[].slice.call(document.querySelectorAll('.door'));
+  function open(d){
+    doors.forEach(function(x){
+      var on=x===d; x.classList.toggle('on',on);
+      x.querySelector('.hit').setAttribute('aria-expanded',on);
+    });
+  }
+  var hoverOK=window.matchMedia('(hover:hover) and (min-width:901px)').matches;
+  doors.forEach(function(d){
+    d.querySelector('.hit').addEventListener('click',function(){open(d)});
+    if(hoverOK) d.addEventListener('mouseenter',function(){open(d)});
+  });
+  // menu
+  var b=document.querySelector('.burger'),n=document.getElementById('nav');
+  b.addEventListener('click',function(){var o=n.classList.toggle('open');b.setAttribute('aria-expanded',o)});
+  // reveal
+  var els=document.querySelectorAll('.rv');
+  if('IntersectionObserver' in window){
+    var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:.12});
+    els.forEach(function(e){io.observe(e)});
+  }else{els.forEach(function(e){e.classList.add('in')})}
+})();
+</script>
+</body>
+</html>
