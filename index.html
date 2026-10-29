@@ -88,8 +88,9 @@ li.has:hover .drop,li.has:focus-within .drop{opacity:1;visibility:visible;transf
 .hero{position:relative;overflow:hidden;isolation:isolate;background:
   radial-gradient(900px 520px at 85% 15%,#ffffff 0,rgba(255,255,255,0) 70%),
   linear-gradient(160deg,#e9f6fe 0,#cdeaf9 60%,#b9e1f6 100%);
-  padding-bottom:120px}
-.hero::after{content:"";position:absolute;left:0;right:0;bottom:-1px;height:90px;background:#fff;clip-path:ellipse(75% 100% at 50% 100%);z-index:0}
+  padding-bottom:150px;min-height:min(820px,calc(100vh - 130px))}
+.hero::before{content:"";position:absolute;left:-10%;right:-10%;bottom:30px;height:140px;background:linear-gradient(90deg,rgba(43,187,217,.28),rgba(11,99,181,.18));clip-path:ellipse(60% 100% at 40% 100%);z-index:0}
+.hero::after{content:"";position:absolute;left:0;right:0;bottom:-1px;height:96px;background:#fff;clip-path:ellipse(75% 100% at 50% 100%);z-index:0}
 .bub{position:absolute;border-radius:50%;z-index:-1;background:radial-gradient(circle at 30% 28%,rgba(255,255,255,.95) 0,rgba(255,255,255,.35) 28%,rgba(43,187,217,.12) 62%,rgba(43,187,217,.28) 100%);box-shadow:inset 0 0 0 1.5px rgba(255,255,255,.85);animation:bob 9s ease-in-out infinite}
 .bub.b1{width:150px;height:150px;left:-30px;top:60px}
 .bub.b2{width:64px;height:64px;left:42%;top:40px;animation-delay:-3s}
@@ -97,20 +98,36 @@ li.has:hover .drop,li.has:focus-within .drop{opacity:1;visibility:visible;transf
 .bub.b4{width:90px;height:90px;left:47%;bottom:70px;animation-delay:-1.5s}
 .bub.b5{width:36px;height:36px;left:8%;bottom:220px;animation-delay:-6s}
 @keyframes bob{50%{transform:translateY(-22px)}}
-.hero .wrap{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.02fr);gap:40px 56px;align-items:center;padding-top:clamp(40px,6vw,84px)}
+.hero .wrap{display:grid;grid-template-columns:minmax(0,.95fr) minmax(0,1.05fr);gap:40px 64px;align-items:center;padding-top:clamp(44px,6vw,92px);position:relative;z-index:1}
 .chip{display:inline-flex;align-items:center;gap:10px;background:#fff;color:var(--blue-d);font-weight:700;font-size:14px;padding:9px 18px 9px 12px;border-radius:999px;box-shadow:0 6px 18px -8px rgba(11,99,181,.45)}
 .chip::before{content:"";width:10px;height:10px;border-radius:50%;background:var(--aqua);box-shadow:0 0 0 4px var(--aqua-l)}
-h1{font-size:clamp(3rem,6.6vw,6.2rem);margin:24px 0 24px;color:var(--navy)}
+h1{font-size:clamp(3.2rem,7.4vw,7rem);margin:26px 0 26px;color:var(--navy);line-height:.98}
 h1 .hl{color:var(--blue);position:relative;white-space:nowrap}
 h1 .hl svg{position:absolute;left:0;bottom:-.12em;width:100%;height:.28em;overflow:visible}
 .lede{max-width:520px;font-size:clamp(1.05rem,1.4vw,1.22rem);color:var(--muted)}
 .cta{display:flex;gap:16px;flex-wrap:wrap;margin-top:34px}
 
-.visual{position:relative;padding-bottom:70px}
-.photo{position:relative;border-radius:34px 34px 34px 34px;overflow:hidden;aspect-ratio:16/11;box-shadow:0 40px 70px -30px rgba(10,44,80,.55);transform:rotate(1.2deg)}
+.visual{position:relative;padding:20px 0 90px 24px}
+.visual::before{content:"";position:absolute;left:44px;right:-22px;top:2px;bottom:92px;background:var(--sun);border-radius:40px;transform:rotate(-3.5deg);z-index:0}
+.visual::after{content:"";position:absolute;right:-34px;bottom:40px;width:150px;height:150px;background:radial-gradient(var(--blue) 2.4px,transparent 3px) 0 0/18px 18px;opacity:.5;z-index:0}
+.visual>*{position:relative;z-index:1}
+.photo{border:8px solid #fff}
+.badge{position:absolute!important;top:-6px;right:-14px;z-index:3;width:138px;height:138px;border-radius:50%;background:#fff;box-shadow:0 20px 40px -14px rgba(10,44,80,.5);display:grid;place-items:center}
+.badge svg{position:absolute;inset:0;width:100%;height:100%;animation:spin 22s linear infinite}
+.badge img{width:50px;height:auto}
+@keyframes spin{to{transform:rotate(360deg)}}
+.spk{position:absolute;z-index:2;color:var(--aqua);animation:tw 3.2s ease-in-out infinite}
+.spk svg{width:100%;height:100%;display:block;fill:currentColor}
+.spk.s1{width:34px;height:34px;left:-18px;top:30%}
+.spk.s2{width:22px;height:22px;right:38%;top:-4px;color:var(--sun);animation-delay:-1s}
+.spk.s3{width:28px;height:28px;right:-6px;bottom:112px;color:#fff;animation-delay:-2s}
+@keyframes tw{0%,100%{transform:scale(.7) rotate(0);opacity:.6}50%{transform:scale(1.15) rotate(20deg);opacity:1}}
+.h-spk{position:absolute;width:42px;height:42px;color:var(--sun);right:-.6em;top:-.35em;animation:tw 3s ease-in-out infinite}
+.h-spk svg{width:100%;height:100%;fill:currentColor}
+.photo{position:relative;border-radius:34px;overflow:hidden;aspect-ratio:4/3.3;box-shadow:0 40px 70px -26px rgba(10,44,80,.6);transform:rotate(1.4deg)}
 .photo img{width:100%;height:100%;object-fit:cover;object-position:62% 55%}
 .photo::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(11,99,181,0) 55%,rgba(10,44,80,.35))}
-.picker{position:absolute;left:-28px;bottom:0;width:min(430px,92%);background:#fff;border-radius:var(--r);padding:20px 22px 22px;box-shadow:0 30px 60px -20px rgba(10,44,80,.5)}
+.picker{position:absolute;left:-18px;bottom:6px;width:min(430px,92%);background:#fff;border-radius:var(--r);padding:20px 22px 22px;box-shadow:0 30px 60px -20px rgba(10,44,80,.5)}
 .picker .hint{font-size:13px;font-weight:700;letter-spacing:.02em;color:var(--blue);margin-bottom:12px}
 .tabs{display:flex;gap:10px}
 .tabs button{position:relative;flex:1 1 0;aspect-ratio:1;max-width:68px;border-radius:18px;padding:3px;background:var(--sky);transition:transform .25s,background .25s,box-shadow .25s}
@@ -217,7 +234,8 @@ footer{background:var(--navy);color:#b4c8dd;font-size:15px}
 
 @media (max-width:1100px){
   .hero .wrap{grid-template-columns:1fr}
-  .visual{max-width:680px}
+  .visual{max-width:680px;padding-right:16px}
+  .hero{min-height:0}
   .expect .wrap{grid-template-columns:1fr}
   .q-card,.book .wrap{grid-template-columns:1fr}
   .f-top{grid-template-columns:1fr 1fr}
@@ -238,7 +256,12 @@ footer{background:var(--navy);color:#b4c8dd;font-size:15px}
   .brand img{height:48px}
   header.top .wrap{min-height:74px}
   .picker{position:relative;left:0;margin:-46px auto 0;width:calc(100% - 20px)}
-  .visual{padding-bottom:0}
+  .visual{padding:14px 0 0 0}
+  .visual::before{left:14px;right:-6px;bottom:30px}
+  .visual::after{display:none}
+  .badge{width:104px;height:104px;right:-4px;top:-2px}
+  .badge img{width:38px}
+  .h-spk{width:30px;height:30px}
   .cta .btn{width:100%;justify-content:center}
   .t2,.t3,.t4,.t5{grid-column:span 6}
   .tile{min-height:380px;padding:26px}
@@ -296,7 +319,7 @@ footer{background:var(--navy);color:#b4c8dd;font-size:15px}
   <div class="wrap">
     <div class="copy">
       <span class="chip rv">Great service and quality assurance</span>
-      <h1 class="rv">Cleaning <span class="hl">done right.<svg viewBox="0 0 300 20" preserveAspectRatio="none" aria-hidden="true"><path d="M3 14c40-12 80-12 120-4s110 6 174-6" fill="none" stroke="#ffc93c" stroke-width="9" stroke-linecap="round"/></svg></span></h1>
+      <h1 class="rv">Cleaning <span class="hl">done right.<span class="h-spk" aria-hidden="true"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 0c.8 6.600 5.400 11.200 12 12-6.600.8-11.200 5.400-12 12-.8-6.600-5.400-11.200-12-12C6.600 11.200 11.200 6.600 12 0z"/></svg></span><svg viewBox="0 0 300 20" preserveAspectRatio="none" aria-hidden="true"><path d="M3 14c40-12 80-12 120-4s110 6 174-6" fill="none" stroke="#ffc93c" stroke-width="9" stroke-linecap="round"/></svg></span></h1>
       <p class="lede rv">We put our customers and employees needs first. We are committed to ensuring customer satisfaction and we strive to be the last cleaning company you need.</p>
       <div class="cta rv">
         <a class="btn btn-sun" href="https://www.advancecleaningservices.ca/booknow/">Book Now <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
@@ -305,6 +328,8 @@ footer{background:var(--navy);color:#b4c8dd;font-size:15px}
     </div>
 
     <div class="visual rv">
+      <span class="spk s1" aria-hidden="true"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 0c.8 6.600 5.400 11.200 12 12-6.600.8-11.200 5.400-12 12-.8-6.600-5.400-11.200-12-12C6.600 11.200 11.200 6.600 12 0z"/></svg></span><span class="spk s2" aria-hidden="true"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 0c.8 6.600 5.400 11.200 12 12-6.600.8-11.200 5.400-12 12-.8-6.600-5.400-11.200-12-12C6.600 11.200 11.200 6.600 12 0z"/></svg></span><span class="spk s3" aria-hidden="true"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 0c.8 6.600 5.400 11.200 12 12-6.600.8-11.200 5.400-12 12-.8-6.600-5.400-11.200-12-12C6.600 11.200 11.200 6.600 12 0z"/></svg></span>
+      <div class="badge" aria-hidden="true"><svg viewBox="0 0 140 140"><defs><path id="circ" d="M70,70 m-54,0 a54,54 0 1,1 108,0 a54,54 0 1,1 -108,0"/></defs><text font-size="11" font-weight="800" fill="#0b63b5" font-family="Figtree,Arial,sans-serif"><textPath href="#circ" textLength="334" lengthAdjust="spacing">CLEANING DONE RIGHT • QUALITY ASSURANCE •</textPath></text></svg><img src="images/crest.png" alt=""></div>
       <div class="photo"><img src="images/condo.jpg" alt="Condominium building with ground floor shops" width="1400" height="390"></div>
       <div class="picker" id="picker">
         <p class="hint">Click on the icons below for more information</p>
